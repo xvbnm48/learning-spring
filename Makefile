@@ -18,6 +18,12 @@ build: ## Membangun aplikasi menjadi file JAR (tanpa menjalankan test)
 test: ## Menjalankan semua unit test
 	$(MVNW) test
 
+test-repo: ## Menjalankan unit test untuk layer Repository
+	$(MVNW) test -Dtest="com.example.api.repository.*Tests"
+
+test-controller: ## Menjalankan unit test untuk layer Controller
+	$(MVNW) test -Dtest="com.example.api.controller.*Tests"
+
 clean: ## Membersihkan folder target (hasil build)
 	$(MVNW) clean
 
